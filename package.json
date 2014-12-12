@@ -1,0 +1,34 @@
+{
+  "name": "hubot-slack-attachment",
+  "description": "Re-enable `slack-attachment` event for hubot-slack",
+  "version": "0.1.0",
+  "author": "Leandro López <inkel.ar@gmail.com> (inkel)",
+  "license": "MIT",
+  "keywords": [
+    "hubot",
+    "slack"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/inkel/hubot-slack-attachment.git"
+  },
+  "bug": {
+    "url": "https://github.com/inkel/hubot-slack-attachment/issues"
+  },
+  "dependencies": {
+    "coffee-script": "~1.6"
+  },
+  "main": "index.coffee",
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  },
+  "bugs": {
+    "url": "https://github.com/inkel/hubot-slack-attachment/issues"
+  },
+  "homepage": "https://github.com/inkel/hubot-slack-attachment",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
