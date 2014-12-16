@@ -1,7 +1,7 @@
 {
   "name": "hubot-slack-attachment",
   "description": "Re-enable `slack-attachment` event for hubot-slack",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "Leandro López <inkel.ar@gmail.com> (inkel)",
   "license": "MIT",
   "keywords": [
