@@ -4,6 +4,8 @@
 # Environment:
 #   HUBOT_SLACK_INCOMING_WEBHOOK
 
+slack = require 'hubot-slack'
+
 module.exports = (robot) ->
   options =
     webhook: process.env.HUBOT_SLACK_INCOMING_WEBHOOK
@@ -32,6 +34,17 @@ module.exports = (robot) ->
       payload.icon_url = data.icon_url
     else if data.icon_emoji?
       payload.icon_emoji = data.icon_emoji
+    else if payload.username == robot.name
+      # use the image from our bot's user object, if present
+      if robot.adapter instanceof slack.SlackBot
+        profile = robot.adapter.client.getUserByID(robot.adapter.client.self.id)?.profile
+        if profile?
+          # I'd like to think that image_192 will always exist, but I don't want to rely on it
+          for key in ['image_192', 'image_72', 'image_48', 'image_32', 'image_24']
+            image_url = profile[key]
+            if image_url?
+              payload.icon_url = image_url
+              break
 
     reqbody = JSON.stringify(payload)
 
