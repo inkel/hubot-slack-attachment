@@ -13,9 +13,29 @@ And then add `hubot-slack-attachment` to `external-scripts.json`.
 
 Last but not least, you need to add the environment variable `HUBOT_SLACK_INCOMING_WEBHOOK` to the URL for the new [incoming webhook][incoming] you've just defined.
 
+## Usage
+
+Emit a `slack.attachment` event with the following parameters:
+
+```coffee
+robot.emit 'slack.attachment',
+  message: msg.message
+  content:
+    # see https://api.slack.com/docs/attachments
+    text: "Attachment text"
+    fallback: "Attachment fallback"
+    fields: [{
+      title: "Field title"
+      value: "Field value"
+    }]
+  channel: "#general" # optional, defaults to message.room
+  username: "foobot" # optional, defaults to robot.name
+  icon_url: "..." # optional
+  icon_emoji: "..." # optional
+```
+
 ## Known Issues
 
-* Attachments will be shown with the default incoming webhook icon (the same icon as `slackbot`)
 * The user name sending the attachment will be `#{robot.name} (bot)`, so if your bot is named `hubot` it will appear as `hubot (bot)`
 
 [hubot-slack]: https://github.com/slackhq/hubot-slack
