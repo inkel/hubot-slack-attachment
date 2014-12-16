@@ -28,7 +28,9 @@ module.exports = (robot) ->
     payload.channel  = data.channel || getChannel data.message
     payload.username = getUsername data
 
-    if data.icon_emoji?
+    if data.icon_url?
+      payload.icon_url = data.icon_url
+    else if data.icon_emoji?
       payload.icon_emoji = data.icon_emoji
 
     reqbody = JSON.stringify(payload)
