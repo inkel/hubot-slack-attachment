@@ -11,7 +11,10 @@ module.exports = (robot) ->
   return robot.logger.error "Missing configuration HUBOT_SLACK_INCOMING_WEBHOOK" unless options.webhook?
 
   getChannel = (msg) ->
-    if msg.user && msg.room == msg.user.name
+    if msg.match /^[#@]/
+      # the channel already has an appropriate prefix
+      msg.room
+    else if msg.user && msg.room == msg.user.name
       "@#{msg.room}"
     else
       "##{msg.room}"
