@@ -5,6 +5,11 @@
 #   HUBOT_SLACK_INCOMING_WEBHOOK
 
 module.exports = (robot) ->
+  options =
+    webhook: process.env.HUBOT_SLACK_INCOMING_WEBHOOK
+
+  return robot.logger.error "Missing configuration HUBOT_SLACK_INCOMING_WEBHOOK" unless options.webhook?
+
   getChannel = (msg) ->
     if msg.user && msg.room == msg.user.name
       "@#{msg.room}"
@@ -25,7 +30,7 @@ module.exports = (robot) ->
 
     reqbody = JSON.stringify(payload)
 
-    robot.http(process.env.HUBOT_SLACK_INCOMING_WEBHOOK)
+    robot.http(options.webhook)
       .header("Content-Type", "application/json")
       .post(reqbody) (err, res, body) ->
         return if res.statusCode == 200
