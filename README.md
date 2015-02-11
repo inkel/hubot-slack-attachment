@@ -41,5 +41,13 @@ robot.emit 'slack.attachment',
 [hubot-slack]: https://github.com/slackhq/hubot-slack
 [incoming]: https://my.slack.com/services/new/incoming-webhook
 
+## Contributors
+
+The following people deserve as much credit as I do for contributing to make this little project better:
+
+* [Kevin Ballard](https://github.com/kballard)
+* [Bojan Rajkovic](https://github.com/bojanrajkovic)
+* [Ivan Buryak](https://github.com/11bit)
+
 ## License
 This software is licensed under MIT License. See [License][license] for more details.
