@@ -9,7 +9,7 @@ To use again `slack-attachment` events, just run the following in your hubot rep
 npm install hubot-slack-attachment --save
 ```
 
-And then add `hubot-slack-attachment` to `external-scripts.json`. 
+And then add `hubot-slack-attachment` to `external-scripts.json`.
 
 Last but not least, you need to add the environment variable `HUBOT_SLACK_INCOMING_WEBHOOK` to the URL for the new [incoming webhook][incoming] you've just defined.
 
@@ -50,4 +50,4 @@ The following people deserve as much credit as I do for contributing to make thi
 * [Ivan Buryak](https://github.com/11bit)
 
 ## License
-This software is licensed under MIT License. See [License][license] for more details.
+This software is licensed under MIT License. See [LICENSE][LICENSE] for more details.
